@@ -10,5 +10,7 @@
 !.zshrc
 !.Xresources
 !.guide.txt
+!README.md
+!SYSLOG.md
 
 *.uuid
