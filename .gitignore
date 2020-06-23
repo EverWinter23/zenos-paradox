@@ -1,0 +1,10 @@
+/*
+!/.config
+/.config/*
+!/.config/bspwm
+!/.config/polybar
+
+!.gitignore
+!.vimrc
+!.zshrc
+!.Xresources
