@@ -3,8 +3,12 @@
 /.config/*
 !/.config/bspwm
 !/.config/polybar
+!/.fonts
 
 !.gitignore
 !.vimrc
 !.zshrc
 !.Xresources
+
+
+*.uuid
