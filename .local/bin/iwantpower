@@ -1,0 +1,40 @@
+BATTERY_LEVEL=$(acpi -b | sed -n 's/.*\ \([[:digit:]]\{1,3\}\)\%.*/\1/;p')
+BATTERY_STATE=$(acpi -b | awk '{print $3}' | tr -d ",")
+BATTERY_REM=$(acpi -b | sed -n '/Discharging/{s/^.*\ \([[:digit:]]\{2\}\)\:\([[:digit:]]\{2\}\).*/\1h \2min/;p}')
+
+SUSPEND_THRESHOLD="5"
+CRITICAL_THRESHOLD="10"
+WARNING_THRESHOLD="20"
+
+if [ ! -f "/tmp/.battery" ]; then
+    echo "${BATTERY_LEVEL}" > /tmp/.battery
+    echo "${BATTERY_STATE}" >> /tmp/.battery
+    exit
+fi
+
+PREV_BATTERY_LEVEL=$(cat /tmp/.battery | head -n 1)
+PREV_BATTERY_STATE=$(cat /tmp/.battery | tail -n 1)
+echo "${BATTERY_LEVEL}" > /tmp/.battery
+echo "${BATTERY_STATE}" >> /tmp/.battery
+
+
+if [ ${BATTERY_LEVEL} -le ${SUSPEND_THRESHOLD} ]; then
+    systemctl suspend
+
+elif [ ${BATTERY_LEVEL} -le ${CRITICAL_THRESHOLD} ]; then
+    notify-send "  I need JUICE\!\!\!" -u critical
+
+elif [ ${BATTERY_LEVEL} -le ${WARNING_THRESHOLD} ]; then
+    notify-send "  I need JUICE\!\!\!" "${BATTERY_LEVEL}% (${BATTERY_REM}) remaining" -u normal
+fi
+
+
+if [ "${BATTERY_STATE}" != "Discharging" ] && [ "${PREV_BATTERY_STATE}" == "Discharging" ]; then
+    notify-send "  Charging" -u low
+
+fi
+
+
+if [ "${BATTERY_STATE}" == "Discharging" ] && [ "${PREV_BATTERY_STATE}" != "Discharging" ]; then
+    notify-send "  JUICE Unlplugged" -u low
+fi

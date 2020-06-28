@@ -1,6 +1,6 @@
 #! /bin/sh
-export WINDOW_GAP=6
-export SIDE_PADDING=4
+export WINDOW_GAP=10
+export SIDE_PADDING=6
 export TOP_PADDING=50
 
 #This creates negative padding equal to window SIDE_PADDING so that SIDE_PADDINGs are shown only between windows and not on desktop edges.
@@ -103,3 +103,10 @@ if [[ $(echo $GRAPHIC_CARD | grep -i 'intel\|lenovo') != "" ]]; then MCODE='init
   sed -i 's/"xrender"/"glx"/' ~/.config/picom.conf
   grep -q 'vsync = true;' ~/.config/picom.conf || echo 'vsync = true;' >> ~/.config/picom.conf
 fi
+
+
+# POLYBAR
+$HOME/.config/polybar/launch.sh
+
+# SYSTEM NOTIFICATIONS
+systemctl --user start iwantpower.service

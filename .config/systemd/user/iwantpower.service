@@ -1,0 +1,14 @@
+[Unit]
+Description=I want POWER
+
+[Service]
+Type=simple
+ExecStart=/bin/bash %h/.local/bin/iwantpower
+Restart=always
+
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
+RestartSec=10
+
+[Install]
+WantedBy=default.target
