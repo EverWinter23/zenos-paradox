@@ -22,16 +22,12 @@ if [ ${BATTERY_LEVEL} -le ${SUSPEND_THRESHOLD} ]; then
     systemctl suspend
 
 elif [ ${BATTERY_LEVEL} -le ${CRITICAL_THRESHOLD} ]; then
-    notify-send "  I need JUICE\!\!\!" -u critical
-
-elif [ ${BATTERY_LEVEL} -le ${WARNING_THRESHOLD} ]; then
-    notify-send "  I need JUICE\!\!\!" "${BATTERY_LEVEL}% (${BATTERY_REM}) remaining" -u normal
+    notify-send "  I need JUICE!!!" -u critical
 fi
 
 
 if [ "${BATTERY_STATE}" != "Discharging" ] && [ "${PREV_BATTERY_STATE}" == "Discharging" ]; then
     notify-send "  Charging" -u low
-
 fi
 
 
