@@ -68,6 +68,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set nowrap
 
 set fileformats=unix,dos,mac
 
