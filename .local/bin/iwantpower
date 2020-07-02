@@ -21,7 +21,7 @@ echo "${BATTERY_STATE}" >> /tmp/.battery
 if [ ${BATTERY_LEVEL} -le ${SUSPEND_THRESHOLD} ]; then
     systemctl suspend
 
-elif [ ${BATTERY_LEVEL} -le ${CRITICAL_THRESHOLD} ]; then
+elif [ ${BATTERY_LEVEL} -le ${CRITICAL_THRESHOLD} ] || [ ${BATTERY_LEVEL{ -le ${WARNING_THRESHOLD} ]; then
     notify-send "  I need JUICE!!!" -u critical
 fi
 
