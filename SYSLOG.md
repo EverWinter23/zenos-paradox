@@ -17,3 +17,12 @@
 - `.service` files, or systemd atleast use `%h` for `home` rather than 
 the conventional `~` sign.
 
+
+### 16th July 2020 Thursday
+
+- Lots of changes, switched terminal to kitty, emulator to tmux
+- Added devicons for vim, support for js-- likes of `emmet` etc
+- Nord theme for tmux, Batman + wal theme for Terminal and vim
+- Bluetooth issue was fixed-- `bluez-hid2hci` or something
+- If you're gui session is not starting, use: `$ sudo startx`
+
