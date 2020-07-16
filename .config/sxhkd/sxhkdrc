@@ -262,16 +262,16 @@ super + shift + space + z
 
 # Launch fzf Pacsearch
 super + p
-	$TERMINAL -e pacfzf
+	kitty -e pacfzf
 	
 # Launch fzf Yaysearch
 super + y
-	$TERMINAL -e yayfzf
+	kitty -e yayfzf
 
 super + shift + Return
 	
 super + z
-	urxvt
+  kitty 
 
 super + shift + z
 	open-terminal-here
@@ -286,11 +286,11 @@ super + shift + b
 	$BROWSER
     		
 super + e
-	thunar
+	nautilus --new-window
 
 # Use slightly bigger font for ranger
 super + shift + e
-	urxvt ranger
+	kitty -e ranger
 
 Print
 	scrot
