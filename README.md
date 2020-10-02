@@ -20,4 +20,4 @@ are bigger than other infinities.”
 
 ### Batman Lego Theme-- First Try!!
 
-![Batman](./screenshots/BatmanLego.png)
+![Batman](./screenshots/Batman_v0.0.2.png)
