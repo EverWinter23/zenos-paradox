@@ -1,0 +1,100 @@
+/**
+ * ROFI Color theme
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+
+configuration {
+    drun-display-format: "{name}";
+	modi: 							            "combi";
+	combi-modi: 					          "drun, run";
+	scroll-method:                  1;
+  display-ssh:                    "ssh";
+  display-run:                    "!#";
+  display-drun:                   "";
+  display-combi:                  " >> ";
+  font:                           "Hack 10";
+}
+
+/* colors */
+* {
+red: #1F1F1F;
+blue: #25B1CA;
+green: #2ABB9C;
+purple: #5537D2;
+white: #FAA914;
+}
+
+// black
+/*
+* {
+bg: #1F1F1F;
+bg-sel: #1F1F1F;
+fg: #ffffff;
+}
+*/
+
+// white
+* {
+bg: #FAA914;
+bg-sel: #F9BD4E;
+fg: #1F1F1F;
+}
+
+* {
+  background-color: #00000000;
+}
+
+window {
+  height: 28%;
+  center: north;
+  anchor: north;
+  width: 20%;
+}
+
+mainbox {
+  children: [ inputbar, listview ];
+  background-color: @bg;
+  border: 2px;
+  border-color: @bg;
+}
+
+listview {
+  columns: 1;
+  padding: 0;
+  spacing: 2;
+}
+
+element {
+  border: 0;
+  text-color: @fg;
+  orientation: vertical;
+  padding: 12 12 12 12;
+  border-radius: 0;
+}
+
+element selected {
+  background-color: @bg-sel;
+  border-color: @bg;
+  text-color: @fg;
+}
+
+inputbar {
+  padding: 4 4 4 4;
+  background-color: @red;
+  border: 0 0 0 0;
+  border-color: @fg;
+  children: [prompt, entry];
+}
+
+prompt {
+  expand: false;
+  text-color: @bg;
+  padding: 8 0 0 0;
+}
+
+entry {
+  text-color: @white;
+  padding: 8 0 8 0;
+}
+

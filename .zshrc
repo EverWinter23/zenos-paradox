@@ -213,3 +213,5 @@ export BROWSER=firefox-nightly
 
 export LUA_PATH='/usr/local/share/lua/5.3/?.lua;/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua;/home/frost/.luarocks/share/lua/5.3/?.lua;/home/frost/.luarocks/share/lua/5.3/?/init.lua;/usr/local/share/lua/5.3/?/init.lua'
 export LUA_CPATH='/usr/lib/lua/5.3/?.so;/usr/lib/lua/5.3/loadall.so;./?.so;/home/frost/.luarocks/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/?.so'
+# This is a JAVA GUI Fix
+export _JAVA_AWT_WM_NONREPARENTING=1

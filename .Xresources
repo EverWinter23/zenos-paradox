@@ -37,8 +37,9 @@
 *color21:      #e8e6df
 
 
-!URxvt.font: xft:Unifont:size=12:antialias=true
+!URxvt.font: xft:Unifont:size=12:antialias=truea
 URxvt.font: xft:Monaco:size=10:antialias=true
+!URxvt.font: xft:Hack\ Regular\ Nerd\ Font\ Complete\ Mono:size=12
 
 Xft.lcdfilter:  lcddefault
 

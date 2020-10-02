@@ -163,6 +163,9 @@ super + ctrl + {a,s,w,d}
 super + ctrl + {Left,Down,Up,Right}
 	bspwm_resize.sh {west,south,north,east}
 
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
 #
 # Layout manipulation/desktop level controls
 # ______________    
@@ -271,7 +274,7 @@ super + y
 super + shift + Return
 	
 super + z
-  kitty 
+  kitty -e  
 
 super + shift + z
 	open-terminal-here
