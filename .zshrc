@@ -215,3 +215,9 @@ export LUA_PATH='/usr/local/share/lua/5.3/?.lua;/usr/share/lua/5.3/?.lua;/usr/sh
 export LUA_CPATH='/usr/lib/lua/5.3/?.so;/usr/lib/lua/5.3/loadall.so;./?.so;/home/frost/.luarocks/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/?.so'
 # This is a JAVA GUI Fix
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# NPM packages in homedir
+export NPM_PACKAGES="$HOME/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+# Tell Node about these packages
+NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"

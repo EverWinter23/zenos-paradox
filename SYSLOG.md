@@ -26,3 +26,25 @@ the conventional `~` sign.
 - Bluetooth issue was fixed-- `bluez-hid2hci` or something
 - If you're gui session is not starting, use: `$ sudo startx`
 
+
+### 24th December 2020 Thursday
+
+#monogame #gamedev
+
+- Nautlius `open in terminal` is now set to kitty using `gsettings`
+- Vim now supports Haxe, the autocomplete is garbage and so slow
+- NPM global packages are now stored in the user's home directory
+- Command to build openfl projects:
+    - `$ openfl test linux`
+- Monogame and vscode ext installation:
+    - Link: [Monogame Website](https://docs.monogame.net/articles/getting_started/1_setting_up_your_development_environment_ubuntu.html)
+    - Getting Started [guide](https://docs.monogame.net/articles/getting_started/2_creating_a_new_project_netcore.html)
+    - `$ sudo pacman -S dotnet-sdk-3.1`
+    - `$ code --install-extension ms-dotnettools.csharp`
+    - `$ dotnet tool install --global dotnet-mgcb-editor`
+    - `$ mgcb-editor --register` <- Didn't work :/ Fix below
+    - `$ chmod +x ~/.nuget/packages/monogame.content.builder/3.7.0.4/build/MGCB/build/ffprobe`
+    - `$ chmod +x ~/.nuget/packages/monogame.content.builder/3.7.0.4/build/MGCB/build/ffmpeg`
+    - `$ sudo pacman -S mono` for Hevadea
+    - And then to build the project, go to Hevadea.Launcher:
+    - `$ dotnet build .`
